@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="queue-input" type="text">
+    <p id="queue-cont">队列内容：apple&lt;-pear</p>
+    <button id="in-btn">入队</button>
+    <button id="out-btn">出队</button>
+    <button id="font-btn">打印队头元素内容</button>
+    <button id="empty-btn">判断队列是否为空</button>
+
+    <script>
+        var queue = ["apple", "pear"],
+            input = document.querySelector("#queue-input"),
+            text = document.querySelector("#queue-cont"),
+            inBtn = document.querySelector("#in-btn"),
+            outBtn = document.querySelector("#out-btn"),
+            fontBtn = document.querySelector("#font-btn"),
+            emptyBtn = document.querySelector("#empty-btn"),
+            str = "队列内容：";
+
+        inBtn.onclick = function () {
+            if (input.value.replace(/(^\s*)|(\s*$)/g, "").length == 0) {
+                text.innerText = "请在输入框输入内容！";
+            } else {
+                queue.push(input.value);
+                text.innerText = str + queue.join("<-");
+            }
+        }
+
+        outBtn.onclick = function () {
+            let x = queue.length;
+            if (queue[x - 1]) {
+                queue.shift();
+                text.innerText = str + queue.join("<-");
+            } else {
+                text.innerText = "队列为空!";
+            }
+
+        }
+
+        fontBtn.onclick = function () {
+            let x = queue.length;
+            if (queue[0]) {
+                text.innerText = "队头元素内容为： " + queue[0];
+            } else {
+                text.innerText = "队列为空!";
+            }
+        }
+
+        emptyBtn.onclick = function () {
+            let x;
+            if (queue.length === 0) {
+                text.innerText = "队列内为空！";
+            } else {
+                text.innerText = "队列内不为空！";
+            }
+        }
+    </script>
+</body>
+
+</html>

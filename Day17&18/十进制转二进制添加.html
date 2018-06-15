@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果: </p>
+    <script>
+        function dec2bin(decNumber) {
+            if (Math.floor(Math.abs(decNumber)) != decNumber) {
+                alert(" 请输入正确的十进制数！");
+            } else {
+                var num1 = Math.floor(decNumber / 2);
+                var arr = [decNumber % 2];
+                var num2;
+                while (num1 != 0) {
+                    num2 = num1 % 2;
+                    arr.unshift(num2);
+                    num1 = Math.floor(num1 / 2);
+                }
+                //console.log(arr);
+                return arr.join("");
+            }
+        }
+
+
+        var result = document.getElementById("result").innerText;
+        document.getElementById("trans-btn").onclick = function () {
+            var number = document.getElementById("dec-number").value;
+            var number2 = document.getElementById("bin-bit").value;
+            if (Math.floor(Math.abs(number2)) != number2) {
+                alert(" 请输入正确的二进制数位数！");
+            } else {
+                //console.log(number);
+                //document.getElementById("result").innerText = result + dec2bin(number);
+                //console.log(number2 != dec2bin(number).length);
+                if (number2 < dec2bin(number).length) {
+                    console.log("这个，好像报错了？");
+                    document.getElementById("result").innerText = result + dec2bin(number);
+                } else if (number2 === dec2bin(number).length) {
+                    document.getElementById("result").innerText = result + dec2bin(number);
+                } else if (number2 > dec2bin(number).length) {
+                    var x = number2 - dec2bin(number).length;
+                    //console.log(x);
+                    var zero = "0".repeat(x);
+                    document.getElementById("result").innerText = result + zero +dec2bin(number);
+                }
+
+            }
+        }
+    </script>
+</body>
+
+</html>

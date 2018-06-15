@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label>String A:
+            <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+        </label>
+        <textarea id="str-a"></textarea>
+        <label>String B:
+            <input id="radio-b" type="radio" name="str-obj" value="b">
+        </label>
+        <textarea id="str-b"></textarea>
+        <label>Num A：
+            <input id="num-a" type="number" value="0">
+        </label>
+        <label>Num B：
+            <input id="num-b" type="number" value="1">
+        </label>
+    </div>
+    <div>
+        <button>获取当前选中输入的内容长度</button>
+        <button>当前选中输入中的第3个字符</button>
+        <button>把两个输入框的文字连接在一起输出（concat）</button>
+        <button>输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+        <button>输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+        <button>使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+        <button>当前选中输入框的行数</button>
+        <button>使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+        <button>把所选输入框中的内容全部转为大写</button>
+        <button>把所选输入框中的内容全部转为小写</button>
+        <button>把所选输入框中内容的半角空格全部去除</button>
+        <button>把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+    </div>
+    <p id="result"></p>
+    <script>
+        let text = document.querySelector("#result"),
+            btnList = document.querySelectorAll("button"),
+            stack_a = new Object(),
+            stack_b = new Object();
+
+        function obtainStr() {
+            let str_a = document.querySelector("#str-a"),
+                str_b = document.querySelector("#str-b"),
+                radio_a = document.querySelector("#radio-a"),
+                radio_b = document.querySelector("#radio-b");
+
+            stack_a.value = str_a.value;
+            stack_b.value = str_b.value;
+            if (radio_a.checked) {
+                stack_a.checked = true;
+            } else {
+                stack_a.checked = false;
+            }
+
+            if (radio_b.checked) {
+                stack_b.checked = true;
+            } else {
+                stack_b.checked = false;
+            }
+        }
+
+        function check() {
+            if (stack_a.checked) {
+                if (stack_a.value.length <= 0) {
+                    text.innerText = "请检查A输入框内内容";
+                }
+            } else if (stack_b.checked) {
+                if (stack_b.value.length <= 0) {
+                    text.innerText = "请检查B输入框内内容";
+                }
+            }
+        }
+
+        btnList[0].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            if (stack_a.checked) {
+                text.innerText = "当前输入框内容长度为：" + stack_a.value.length;
+            } else if (stack_b.checked) {
+                text.innerText = "当前输入框内容长度为：" + stack_b.value.length;
+            }
+        }
+
+        btnList[1].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            if (stack_a.checked) {
+                if (stack_a.value.length === 0) {
+                    text.innerText = "当前输入框没有内容";
+                } else if (stack_a.value.length < 3) {
+                    text.innerText = "当前输入框内容长度不足3";
+                } else {
+                    text.innerText = "当前输入框中第三个字符为：" + stack_a.value[2];
+                }
+            } else if (stack_b.checked) {
+                if (stack_b.value.length === 0) {
+                    text.innerText = "当前输入框没有内容";
+                } else if (stack_b.value.length < 3) {
+                    text.innerText = "当前输入框内容长度不足3";
+                } else {
+                    text.innerText = "当前输入框中第三个字符为：" + stack_b.value[2];
+                }
+            }
+        }
+
+        btnList[2].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            check();
+            if (stack_a.value.length > 0 && stack_b.value.length > 0) {
+                text.innerText = stack_a.value.concat(stack_b.value);
+            }
+        }
+
+        btnList[3].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            check();
+            if (stack_a.value.length > 0 && stack_b.value.length > 0) {
+                let x = stack_a.value.indexOf(stack_b.value);
+                if (x === -1) {
+                    text.innerText = "B没有在A里面出现过";
+                } else {
+                    text.innerText = "B第一次出现在A的第" + (x + 1) + "个字符处";
+                }
+            }
+        }
+
+        btnList[4].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            check();
+            if (stack_a.value.length > 0 && stack_b.value.length > 0) {
+                let x = stack_a.value.lastIndexOf(stack_b.value);
+                if (x === -1) {
+                    text.innerText = "B没有在A里面出现过";
+                } else {
+                    text.innerText = "B最后一次出现在A的第" + (x + 1) + "个字符处";
+                }
+            }
+        }
+
+        btnList[5].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            let a = document.querySelector("#num-a"),
+                b = document.querySelector("#num-b");
+            if (stack_a.checked) {
+                text.innerText = stack_a.value.slice(a.value, b.value);
+            } else if (stack_b.checked) {
+                text.innerText = stack_b.value.slice(a.value, b.value);
+            }
+            check();
+        }
+
+        btnList[6].onclick = function () { 
+            text.innerText = "";
+            obtainStr();
+            if (stack_a.checked) {
+                text.innerText = stack_a.value.split("\n").length;
+            } else if (stack_b.checked) {
+                text.innerText = stack_b.value.split("\n").length;
+            }
+            check();
+        }
+
+        btnList[7].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            let a = document.querySelector("#num-a"),
+                b = document.querySelector("#num-b");
+            if (stack_a.checked) {
+                text.innerText = stack_a.value.substr(a.value, b.value);
+            } else if (stack_b.checked) {
+                text.innerText = stack_b.value.substr(a.value, b.value);
+            }
+            check();
+        }
+
+        btnList[8].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            if (stack_a.checked) {
+                text.innerText = stack_a.value.toUpperCase();
+            } else if (stack_b.checked) {
+                text.innerText = stack_b.value.toUpperCase();
+            }
+            check();
+        }
+
+        btnList[9].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            if (stack_a.checked) {
+                text.innerText = stack_a.value.toLowerCase();
+            } else if (stack_b.checked) {
+                text.innerText = stack_b.value.toLowerCase();
+            }
+            check();
+        }
+
+        btnList[10].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            if (stack_a.checked) {
+                for (let i = 0; i < stack_a.value.length; i++) {
+                    if (stack_a.value[i].charCodeAt() === 32) {
+                        stack_a.value = stack_a.value.replace(stack_a.value[i], "");
+                    }
+                }
+                text.innerText = stack_a.value;
+            } else if (stack_b.checked) {
+                for (let i = 0; i < stack_b.value.length; i++) {
+                    if (stack_b.value[i].charCodeAt() === 32) {
+                        stack_b.value = stack_b.value.replace(stack_b.value[i], "");
+                    }
+                }
+                text.innerText = stack_b.value;
+            }
+            check();
+        }
+
+        btnList[11].onclick = function () {
+            text.innerText = "";
+            obtainStr();
+            let j = "";
+            if (stack_a.checked) {
+                if (stack_a.value.length <= 0) {
+                    text.innerText = "请检查A输入框内内容";
+                } else {
+                    for (let i = 0; i < stack_a.value.length; i++) {
+                        if (stack_a.value[i] === "a") {
+                            j += stack_b.value;
+                            console.log(stack_a.value);
+                        } else {
+                            j += stack_a.value[i];
+                        }
+                    }
+                    text.innerText = j;
+                }
+            } else if (stack_b.checked) {
+                if (stack_b.value.length <= 0) {
+                    text.innerText = "请检查B输入框内内容";
+                } else {
+                    for (let i = 0; i < stack_b.value.length; i++) {
+                        if (stack_b.value[i] === "a") {
+                            j += stack_b.value;
+                            console.log(stack_b.value);
+                        } else {
+                            j += stack_b.value[i];
+                        }
+                    }
+                    text.innerText = j;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

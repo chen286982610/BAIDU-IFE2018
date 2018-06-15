@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="name" type="text">
+    <button id="submit-btn">Submit</button>
+    <script>
+        function print() {
+            let text = document.getElementById("name").value;
+            if (text === "") {
+                console.log("无内容。");
+            } else {
+                console.log(text);
+            }
+
+        }
+
+        let x = document.getElementById("name");
+        let btn = document.getElementById("submit-btn");
+        btn.addEventListener("click", print);
+
+        x.addEventListener("keydown", function (event) {
+            if (event.keyCode === 13) {
+                print();
+            } else if (event.keyCode === 27) {
+                x.value = "";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: "microsoft yahei";
+        }
+
+        .main {
+            width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px 0 20px 60px;
+            box-shadow: 0 0 20px rgba(0, 204, 204, .5);
+            position: relative;
+        }
+
+        .main h1 {
+            color: #666;
+        }
+
+        .main h4 {
+            color: #f11;
+        }
+
+        .main a {
+            text-decoration: none;
+        }
+
+        .main a:link {
+            color: #ccc;
+        }
+
+        .main a:visited {
+            color: #000;
+        }
+
+        .main a:hover {
+            color: #f11;
+        }
+
+        .main a:active {
+            color: #fff;
+        }
+
+        .main li,
+        .main dd {
+            margin-top: 5px;
+        }
+
+        .main img {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+        }
+
+        .main ul:first-of-type a {
+            color: #000;
+        }
+
+        #btn {
+            position: absolute;
+            top: 180px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+        <h1>徐妙锦</h1>
+        <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=1939906772,1517607809&fm=58">
+        <img>
+        <h4>联系方式</h4>
+        <ul>
+            <li>
+                <a href="mailto:chaos@qq.com">邮箱: chaos@qq.com</a>
+            </li>
+            <li>微信: chaos</li>
+        </ul>
+
+        <h4>教育经历</h4>
+        <ul>
+            <li>嘉黎敦皇家学院 专科</li>
+            <li>摸鱼专业</li>
+            <li>2016年3月毕业</li>
+        </ul>
+
+        <h4>项目经历</h4>
+        <ul>
+            <li>
+                <dl>
+                    <dt>宇宙第一街机格斗游戏毒奶粉</dt>
+                    <dd>2016.08 - 2017.08</dd>
+                    <dd>在本游戏项目开发中主要负责客户端开发</dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>宇宙第二街机格斗游戏喂猪</dt>
+                    <dd>2017.10 - 2018.03</dd>
+                    <dd>在本项目中主要负责喂猪</dd>
+                </dl>
+            </li>
+        </ul>
+
+        <h4>擅长技能</h4>
+        <ul>
+            <li>CSS的正确拼写</li>
+            <li>JavaScript的正确拼写</li>
+            <li>HTML的正确拼写</li>
+        </ul>
+
+        <h4>工作经历</h4>
+        <ul>
+            <li>
+                <dl>
+                    <dt>南极企鹅工作室</dt>
+                    <dd>2016.04-2017.09</dd>
+                    <dd>此段时间主要负责了毒奶粉的客户端开发，主要使用C#</dd>
+                </dl>
+            </li>
+            <li>
+                <dl>
+                    <dt>天南养猪场</dt>
+                    <dd>2017.10-2018.03</dd>
+                    <dd>主要负责喂猪</dd>
+                </dl>
+            </li>
+        </ul>
+
+        <h4>个人作品</h4>
+        <ul>
+            <li>
+                <a href="#">奥特曼打小怪兽</a>
+            </li>
+            <li>
+                <a href="#">狼吃娃</a>
+            </li>
+        </ul>
+        <button id="btn">点我点我点我</button>
+    </main>
+    <script>
+        document.getElementById("btn").onclick = function () {
+            var name = document.getElementsByTagName("h1")[0];
+            name.innerText = "其实并没有什么";
+        }
+
+        function time() {
+            var now = new Date();
+            if (now.getHours() < 6) {
+                alert("凌晨正是睡觉的好时间啊！" + "其实我最讨厌这种烦人的弹窗了。");
+            } else if (now.getHours() < 11) {
+                alert("上午好！" + "其实我最讨厌这种烦人的弹窗了。");
+            } else if (now.getHours() < 14) {
+                alert("中午好！" + "其实我最讨厌这种烦人的弹窗了。");
+            } else if (now.getHours() < 18) {
+                alert("下午好！" + "其实我最讨厌这种烦人的弹窗了。");
+            } else if (now.getHours() < 22) {
+                alert("晚上好！" + "其实我最讨厌这种烦人的弹窗了。");
+            } else if (now.getHours() < 24) {
+                alert("深夜了，该休息了！" + "其实我最讨厌这种烦人的弹窗了。");
+            }
+        }
+        
+        time();
+    </script>
+</body>
+
+</html>

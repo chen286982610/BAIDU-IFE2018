@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 480px;
+            height: 480px;
+            margin: 0 auto;
+            background: url("http://ife.baidu.com/2016/static/img/erik_ce204002.jpg") no-repeat;
+            background-position-x: 0;
+            background-position-y: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box"></div>
+    <script>
+        let box = document.querySelector(".box"),
+            size = parseInt(getComputedStyle(box).getPropertyValue("background-position-y")),
+            posit = -480,
+            num = 480;
+
+        function magic() {
+            box.style.backgroundPositionY = posit + "px";
+            if (posit === -480 || posit === -7680) {
+                num *= -1;
+                // console.log(posit);
+            }
+            posit += num;
+            setTimeout(magic, 80);
+        }
+        magic();
+    </script>
+</body>
+
+</html>

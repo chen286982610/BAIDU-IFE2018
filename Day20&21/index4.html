@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
+    <button id="fade-btn">淡出</button>
+    <script>
+        let btn = document.querySelector("#fade-btn");
+        let box = document.querySelector("#fade-obj");
+        // console.log(btn);
+        btn.addEventListener("click", function (event) {
+            // console.log(event.target);
+            let btn_this = event.target;
+
+            if (btn_this.innerText === "淡出") {
+                btn_this.disabled = "disabled";
+                let num = box.style.opacity = "1";
+
+                function out() {
+                    if (num > 0) {
+                        num = num - 0.1;
+                        // console.log(num);
+                        box.style.opacity = num;
+
+                    } else if (num <= 0) {
+                        clearInterval(time);
+                        btn_this.disabled = "";
+                        btn_this.innerText = "淡入";
+                    }
+                }
+
+                let time = setInterval(out, 50);
+            } else if (btn_this.innerText === "淡入") {
+                btn_this.disabled = "disabled";
+                let num2 = box.style.opacity = "0";
+
+                function in_box() {
+                    if (num2 < 1) {
+                        num2 = parseFloat(num2) + 0.1;
+                        // console.log(num2);
+                        box.style.opacity = num2;
+                    } else if (num2 >= 1) {
+                        clearInterval(time2);
+                        btn_this.disabled = "";
+                        btn_this.innerText = "淡出";
+                    }
+                }
+                let time2 = setInterval(in_box, 50);
+            }
+        })
+    </script>
+</body>
+
+</html>

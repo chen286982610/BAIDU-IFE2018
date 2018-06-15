@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>将arr以从小到大的顺序在console里输出</button>
+    <button>将arr以从大到小的顺序在console里输出</button>
+    <button>将arr2以从a到z的顺序在console里输出</button>
+    <button>将arr2以从z到a的顺序在console里输出</button>
+    <button>将arr3中的第二个数以从大到小的顺序进行排序输出</button>
+    <button>元素中第二个数从大到小的顺序进行排序输出</button>
+    <script>
+        let arr = [43, 54, 4, -4, 84, 100, 58, 27, 140],
+            arr2 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'],
+            arr3 = [
+                [10, 14],
+                [16, 60],
+                [7, 44],
+                [26, 35],
+                [22, 63]
+            ],
+            arr4 = [{
+                id: 1,
+                name: 'candy',
+                value: 40
+            }, {
+                id: 2,
+                name: 'Simon',
+                value: 50
+            }, {
+                id: 3,
+                name: 'Tony',
+                value: 45
+            }, {
+                id: 4,
+                name: 'Annie',
+                value: 60
+            }],
+            btn = document.querySelectorAll("button");
+
+        btn[0].onclick = function () {
+            arr.sort(function (a, b) {
+                if (a > b) {
+                    return 1;
+                } else if (a < b) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+
+
+            console.log(arr);
+
+        }
+
+        btn[1].onclick = function () {
+            arr.sort(function (a, b) {
+                if (a < b) {
+                    return 1;
+                } else if (a > b) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+
+
+            console.log(arr);
+
+        }
+
+        btn[2].onclick = function () {
+            arr2.sort(function (a, b) {
+                if (a > b) {
+                    return 1;
+                } else if (a < b) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+
+
+            console.log(arr2);
+
+        }
+
+        btn[3].onclick = function () {
+            arr2.sort(function (a, b) {
+                if (a < b) {
+                    return 1;
+                } else if (a > b) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+
+
+            console.log(arr2);
+
+        }
+
+        btn[4].onclick = function () {
+            arr3.sort(function (a, b) {
+                if (a[1] < b[1]) {
+                    return 1;
+                } else if (a[1] > b[1]) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+            let x;
+            x = "[[" + arr3.toString().replace(/(\d+),(\d+),/g, "$1,$2\],[") + "]]";
+            console.log(x);
+        }
+
+        btn[5].onclick = function () {
+            arr4.sort(function (a, b) {
+                if (a.value < b.value) {
+                    return 1;
+                } else if (b.value < a.value) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            });
+
+            for (let i = 0; i < arr4.length; i++) {
+                console.log(arr4[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

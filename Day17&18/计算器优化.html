@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+
+</head>
+
+<body>
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        var number = document.getElementById("result");
+
+        function add() {
+            var num1 = parseFloat(document.getElementById("first-number").value);
+            var num2 = parseFloat(document.getElementById("second-number").value);
+            if (typeof (num1) != "number" || typeof (num2) != "number") {
+                console.log("请输入正确的数值！");
+            } else {
+
+                number.innerHTML = num1 + num2;
+            }
+        }
+
+        function minus() {
+            var num1 = parseFloat(document.getElementById("first-number").value);
+            var num2 = parseFloat(document.getElementById("second-number").value);
+            if (typeof (num1) != "number" || typeof (num2) != "number") {
+                console.log("请输入正确的数值！");
+            } else {
+
+                number.innerHTML = num1 - num2;
+            }
+        }
+
+        function times() {
+            var num1 = parseFloat(document.getElementById("first-number").value);
+            var num2 = parseFloat(document.getElementById("second-number").value);
+            if (typeof (num1) != "number" || typeof (num2) != "number") {
+                console.log("请输入正确的数值！");
+            } else {
+
+                number.innerHTML = num1 * num2;
+            }
+        }
+
+        function divide() {
+            var num1 = parseFloat(document.getElementById("first-number").value);
+            var num2 = parseFloat(document.getElementById("second-number").value);
+            if (typeof (num1) != "number" || typeof (num2) != "number" || num2 === 0) {
+                console.log("请输入正确的数值！");
+            } else {
+                number.innerHTML = num1 / num2;
+            }
+        }
+
+        document.getElementById("add-btn").onclick = add;
+        document.getElementById("minus-btn").onclick = minus;
+        document.getElementById("times-btn").onclick = times;
+        document.getElementById("divide-btn").onclick = divide;
+    </script>
+</body>
+
+</html>

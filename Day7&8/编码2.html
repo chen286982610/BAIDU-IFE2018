@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>编码2</title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0;
+            font-size: 12px;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .header {
+            background: #333;
+        }
+
+        .header article {
+            height: 60px;
+            width: 960px;
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .header article h3 {
+            display: inline-block;
+            font-weight: 400;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        .header a {
+            color: #fff;
+            font-size: 12px;
+        }
+
+        .loginbar {
+            float: right;
+            top: 0;
+            right: 0;
+        }
+
+        .banner {
+            background: #69BB45;
+        }
+
+        .banner>div {
+            height: 230px;
+            width: 960px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .banner_btn {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+            text-align: center;
+            line-height: 30px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .banner_btn a {
+            height: 30px;
+            width: 24px;
+            background: #B3DD9E;
+            font-size: 12px;
+            border: 1px solid #005B00;
+            margin-left: 3px;
+        }
+
+        .banner_btn a:hover {
+            height: 35px;
+            background: #fff;
+            line-height: 40px;
+        }
+
+        .nav {
+            border-bottom: 1px solid #E9E9E9;
+        }
+
+        .nav ul {
+            width: 960px;
+            margin: 0 auto;
+            list-style: none;
+            padding-top: 15px;
+            font-size: 0;
+        }
+
+        .nav li {
+            font-size: 12px;
+            display: inline-block;
+            padding: 12px 20px;
+            border-top: 1px solid #E9E9E9;
+            border-right: 1px solid #E9E9E9;
+            border-left: 1px solid #E9E9E9;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            background: #EEE;
+        }
+
+        .nav li:nth-of-type(1) {
+            margin-bottom: -1px;
+            border-bottom: 1px solid #fff;
+            background: #fff;
+        }
+
+        .main {
+            padding-top: 10px;
+        }
+
+        .main article {
+            width: 960px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main div {
+            border: 1px solid #CECECE;
+            height: 135px;
+            text-align: center;
+            line-height: 135px;
+            margin-bottom: 10px;
+        }
+
+        .main article:nth-of-type(1) div:nth-of-type(3) {
+            flex: 0.9;
+        }
+
+        .main article:nth-of-type(1) div:nth-of-type(2),
+        .main article:nth-of-type(3) div:nth-of-type(2) {
+            margin: 0 10px;
+        }
+
+        .main article:nth-of-type(1) div:nth-of-type(1),
+        .main article:nth-of-type(1) div:nth-of-type(2),
+        .main article:nth-of-type(2) div,
+        .main article:nth-of-type(3) div {
+            flex: 1;
+        }
+
+        .main article:nth-of-type(2) div:nth-of-type(2),
+        .main article:nth-of-type(2) div:nth-of-type(3),
+        .main article:nth-of-type(2) div:nth-of-type(4) {
+            margin-left: 10px;
+        }
+
+        .wrapper {
+            min-height: 100%;
+            padding-bottom: 70px;
+        }
+
+        
+        footer {
+            height: 70px;
+            background: #666;
+            margin-top: -70px;
+        }
+
+        .main article:nth-of-type(3) div {
+            margin-bottom: 0;
+        }
+
+        .copyright {
+            color: #fff;
+            text-align: center;
+            line-height: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <article>
+                <h3>Logo</h3>
+                <div class="loginbar">
+                    <a href="#">Github</a>
+                    <a href="#">Register</a>
+                    <a href="#">Login</a>
+                </div>
+            </article>
+        </header>
+        <section class="banner">
+            <div>
+                <div class="banner_btn">
+                    <a>1</a>
+                    <a>2</a>
+                    <a>3</a>
+                    <a>4</a>
+                </div>
+            </div>
+        </section>
+        <nav class="nav">
+            <ul>
+                <li>HOME</li>
+                <li>PROFILE</li>
+                <li>ABOUT</li>
+            </ul>
+        </nav>
+        <main class="main">
+            <article>
+                <div>This is Content 1</div>
+                <div>MaybeContent 2</div>
+                <div>Content 3</div>
+            </article>
+            <article>
+                <div>Content 4</div>
+                <div>Content 5</div>
+                <div>Content 6</div>
+                <div>Content 7</div>
+            </article>
+            <article>
+                <div>Content 8</div>
+                <div>Content 9</div>
+                <div>Content 10</div>
+            </article>
+        </main>
+    </div>
+    <footer>
+        <p class="copyright">© 2018 ife.baidu.com</p>
+    </footer>
+</body>
+
+</html>

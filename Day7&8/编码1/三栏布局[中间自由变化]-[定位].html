@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三栏布局[中间自由变化]</title>
+    <style>
+        html, body{
+            margin: 0;
+            box-sizing: border-box;
+            height: 100%;
+        }
+
+        .left,
+        .right {
+            width: 300px;
+            height: 100%;
+            background: orange;
+            position: absolute;
+        }
+
+        .left {
+            top: 0;
+            left: 0;
+        }
+        .right {
+            top: 0;
+            right: 0;
+        }
+
+        .main {
+            height: 100%;
+            background: olive;
+            margin: 0 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="left"></div>
+    <div class="main"></div>
+    <div class="right"></div>
+</body>
+</html>

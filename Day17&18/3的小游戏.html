@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>请打开Chrome开发工具！！！</h1>
+    <script>
+        function number() {
+            var arr = [];
+            var reg = RegExp(/3/);
+            for (var i = 1; i < 101; i++) {
+                if (reg.test(i) || i % 3 === 0) {
+                    arr.push("PA");
+                } else {
+                    arr.push(i);
+                }
+            }
+            console.log(arr);
+        }
+
+        number();
+    </script>
+</body>
+
+</html>

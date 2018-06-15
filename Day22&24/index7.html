@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="stack-input" type="text">
+    <p id="stack-cont">栈内容：apple-&gt;pear</p>
+    <button id="push-btn">进栈</button>
+    <button id="pop-btn">退栈</button>
+    <button id="font-btn">打印栈顶元素内容</button>
+    <button id="empty-btn">判断栈是否为空</button>
+
+    <script>
+        var stack = ["apple", "pear"],
+            input = document.querySelector("#stack-input"),
+            text = document.querySelector("#stack-cont"),
+            pushBtn = document.querySelector("#push-btn"),
+            popBtn = document.querySelector("#pop-btn"),
+            fontBtn = document.querySelector("#font-btn"),
+            emptyBtn = document.querySelector("#empty-btn"),
+            str = "栈内容：";
+
+        pushBtn.onclick = function () {
+            if (input.value.replace(/(^\s*)|(\s*$)/g, "").length == 0) {
+                text.innerText = "请在输入框输入内容！";
+            } else {
+                stack.push(input.value);
+                text.innerText = str + stack.join("->");
+            }
+
+        }
+
+        popBtn.onclick = function () {
+            let x = stack.length;
+            if (x <= 0) {
+                text.innerText = "栈内为空！"
+            } else {
+                stack.pop();
+                text.innerText = str + stack.join("->");
+            }
+        }
+
+        fontBtn.onclick = function () {
+            if (stack[stack.length - 1]) {
+                text.innerText = "栈顶元素内容为：" + stack[stack.length - 1];
+            } else {
+                text.innerText = "栈内为空！"
+            }
+        }
+
+        emptyBtn.onclick = function () {
+            if (stack[stack.length - 1]) {
+                text.innerText = "栈内不为空！";
+            } else {
+                text.innerText = "栈内为空！"
+            }
+        }
+    </script>
+</body>
+
+</html>

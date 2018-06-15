@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 740px;
+    background: url(../images/bg1.png);
+    background-size: cover;
+}
+
+.wrapper {
+    width: 960px;
+    margin: 0 auto;
+}
+
+header .wrapper {
+    padding-top: 180px;
+}
+
+header {
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+header .wrapper>p {
+    padding: 0 230px;
+}
+
+header .wrapper article {
+    border: 1px solid #585552;
+    border-radius: 2px;
+    margin-top: 50px;
+    padding: 40px 100px;
+}
+
+header .wrapper article p:nth-of-type(1) {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+header .wrapper article p:nth-of-type(2) {
+    color: #696664;
+}
+
+header .wrapper input {
+    background-color: transparent;
+    border: 1px solid #585552;
+    border-radius: 2px;
+    height: 48px;
+    flex: 0 1 290px;
+    padding-left: 20px;
+    outline: none;
+    color: #fff;
+}
+
+header form {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+#submit {
+    flex: 0 1 125px;
+    padding-left: 0;
+}
+
+.colu1 {
+    padding: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.colu1>p,
+.colu1>h3 {
+    text-align: center;
+    flex: 0 1 960px;
+}
+
+h3 {
+    font-size: 26px;
+    font-weight: 300;
+}
+
+.colu1 h3 {
+    padding: 0 240px;
+    margin: 10px 0 45px;
+}
+
+.colu1_list {
+    flex: 0 1 480px;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+.colu1_list p:nth-of-type(2) {
+    width: 310px;
+}
+
+.colu1_list p:nth-of-type(2),
+.colu2 p,
+.colu3 p,
+.colu4 p,
+header p,
+.colu1>p,
+header .wrapper article p:nth-of-type(2),
+.colu5 p,
+.colu6 div p {
+    word-break: break-all;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+div.colu1_list:nth-of-type(1) {
+    background: url("../images/icon/Iphone.png") no-repeat;
+    background-size: 20px;
+    background-position-y: 4px;
+}
+
+div.colu1_list:nth-of-type(2) {
+    background: url("../images/icon/Check.png") no-repeat;
+    background-size: 25px;
+    background-position-y: 4px;
+}
+
+div.colu1_list:nth-of-type(3) {
+    background: url("../images/icon/Pencil.png") no-repeat;
+    background-size: 25px;
+    background-position-y: 4px;
+}
+
+div.colu1_list:nth-of-type(4) {
+    background: url("../images/icon/Settings.png") no-repeat;
+    background-size: 25px;
+    background-position-y: 4px;
+}
+
+.colu2 {
+    background: url("../images/bg2.png") no-repeat;
+    background-position: right top;
+    background-size: cover;
+    padding: 300px 0;
+}
+
+.colu2 h3,
+.colu2 p {
+    width: 240px;
+    margin-bottom: 30px;
+}
+
+.colu2 h3 {
+    color: #fff;
+}
+
+.colu2 p {
+    color: #bfc2bc;
+}
+
+.colu2 button {
+    width: 200px;
+    height: 48px;
+    text-align: center;
+    outline: none;
+    background: transparent;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.colu2 button:nth-of-type(1) {
+    margin-right: 20px;
+}
+
+.colu3_cont,
+.colu4_cont,
+.colu5_cont {
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.colu3 {
+    padding: 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.colu3 h3 {
+    flex: 0 1 960px;
+}
+
+.colu3 article {
+    flex: 0 1 180px;
+    margin-top: 50px;
+    padding-top: 60px;
+}
+
+.colu3 article:nth-of-type(1) {
+    background: url("../images/icon/Singleton.png") no-repeat top center;
+}
+
+.colu3 article:nth-of-type(2) {
+    background: url("../images/icon/Hero.png") no-repeat top center;
+}
+
+.colu3 article:nth-of-type(3) {
+    background: url("../images/icon/Portland.png") no-repeat top center;
+}
+
+.colu4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px 0;
+}
+
+.colu4 img {
+    margin-bottom: 60px;
+    width: 600px;
+}
+
+.colu4 article {
+    flex: 0 1 300px;
+}
+
+.colu4 h4 {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.colu5 {
+    padding: 50px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.colu5 h3 {
+    margin-bottom: 20px;
+    flex: 0 1 100%;
+}
+
+.colu5>p {
+    padding: 0 230px;
+    flex: 0 1 100%;
+    margin-bottom: 40px;
+}
+
+.colu5 .userpic {
+    width: 470px;
+    height: 340px;
+    margin-bottom: 30px;
+}
+
+.colu6 {
+    padding: 50px 0;
+    display: flex;
+}
+
+.colu6 form,
+.colu6 div {
+    display: inline-block;
+    flex: 0 1 480px;
+}
+
+.colu6 form {
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    padding: 50px;
+}
+
+.colu6 form p {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.colu6 input:nth-of-type(-n+2),
+.colu6 textarea {
+    border: 1px solid #e7e7e7;
+    border-radius: 2px;
+    width: 100%;
+    outline: none;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+
+.colu6 textarea {
+    height: 120px;
+    resize: none;
+    padding-top: 10px;
+}
+
+.colu6 input {
+    border-radius: 2px;
+    height: 48px;
+}
+
+.colu6 input[type=button] {
+    width: 100%;
+    color: #fff;
+    background: #000;
+    text-align: center;
+    outline: none;
+}
+
+.colu6 div {
+    padding: 100px 0 0 100px;
+}
+
+.colu6 div>p {
+    margin-bottom: 30px;
+}
+
+.colu6 h3,
+.colu6 div p {
+    margin-bottom: 20px;
+}
+
+a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.colu6 address a,
+.colu6 address p {
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    display: block;
+    padding-left: 40px;
+    height: 50px;
+}
+
+.colu6 address p {
+    background: url("../images/icon/Map.png") no-repeat;
+    background-position-y: 10px;
+}
+
+.colu6 address a:nth-of-type(1) {
+    background: url("../images/icon/Phone.png") no-repeat;
+}
+
+.colu6 address a:nth-of-type(2) {
+    background: url("../images/icon/Mail.png") no-repeat;
+}
+
+.footer {
+    background: #000;
+    padding: 50px 0 60px;
+}
+
+.colu7 {
+    width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.colu7 a,
+.colu7 p {
+    color: #5b5b5b;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.colu7 dt,
+.colu7 dd,
+.colu7 p {
+    margin-bottom: 15px;
+}
+
+.colu7 p {
+    width: 200px;
+}
+
+@font-face {
+    font-family: "icon";
+    src: url("../fonts/icomoon.eot?vvv237");
+    src: url("../fonts/icomoon.eot?vvv237#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?vvv237") format("truetype"), url("../fonts/icomoon.woff?vvv237") format("woff"), url("../fonts/icomoon.svg?vvv237#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family: "icon";
+    margin-right: 20px;
+}
+
+.userpic {
+    position: relative;
+}
+
+.userpic div {
+    width: 100%;
+    height: 100%;
+    padding-top: 110px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(52, 52, 52, 0.5);
+    opacity: 0;
+    color: #fff;
+    z-index: -1;
+    transition: opacity 0.8s ease;
+    -webkit-transition: opacity 0.8s ease;
+}
+
+.userpic:hover div {
+    z-index: 1;
+    opacity: 1;
+}
+
+.userpic h4,
+.userpic p {
+    text-align: center;
+}
+
+.userpic h4 {
+    margin-bottom: 20px;
+}
+
+.userpic a {
+    display: inline-block;
+    margin-top: 50px;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    border: 1px solid #e7e7e7;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#submit:hover,
+.colu2 button:hover {
+    background: #fff;
+    border: none;
+    color: #000;
+}

@@ -1,0 +1,30 @@
+h3 {
+    font-size: 22px;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0px;
+    margin-right: 30px;
+}
+
+.single,
+.single dt,
+.single dd {
+    display: inline-block;
+}
+
+.theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.tag {
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
