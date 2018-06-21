@@ -25,12 +25,12 @@
             font-size: 12px;
             width: 150px;
             display: none;
-            border-right: 1px solid #bfbfbf;
-            border-left: 1px solid #bfbfbf;
-            border-bottom: 1px solid #bfbfbf;
-            padding: 0 10px;
+            border-right: .5px solid #DFDFDF;
+            border-left: .5px solid #DFDFDF;
+            border-bottom: .5px solid #DFDFDF;
+            /* padding: 10px 10px; */
         }
-
+        
         input {
             outline: none;
             padding: 10px;
@@ -39,8 +39,16 @@
         #email-sug-wrapper li {
 
             overflow: hidden;
-            text-overflow: clip;
-            padding: 10px 0;
+            text-overflow: clip; 
+            padding: 10px 10px; 
+        }
+
+        li:nth-child(odd):hover {
+            background-color: #FDC5CF;
+        }
+
+        li:nth-child(even):hover {
+            background-color: #C0DDEC;
         }
     </style>
     <title>Document</title>
