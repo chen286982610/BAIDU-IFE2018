@@ -1,10 +1,12 @@
 let postfixList = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'],
     email = document.querySelector("#email-input"),
     emailSug = document.querySelector("#email-sug-wrapper"),
-    str;
+    str,
+    num = 0;
 
 function emailPrompt() {
     addNode();
+    document.querySelector("li").setAttribute("class", "check");
 }
 
 function getEmail() {
@@ -97,7 +99,37 @@ function listenMouse(ev) {
     }
 }
 
-
+function listenKey(ev) {
+    // console.log(ev.keyCode);
+    let liArr = document.querySelectorAll("li");
+    if (ev.keyCode === 13) {
+        let set = document.querySelector(".check");
+        email.value = set.innerText;
+        emailSug.style.setProperty("display", "none");
+    }
+    if (ev.keyCode === 38) {
+        for (let i of liArr) {
+            i.setAttribute("class", "");
+        }
+        num--;
+        if (num < 0) {
+            num = liArr.length - 1;
+        }
+        liArr[num].setAttribute("class", "check");
+    }
+    if (ev.keyCode === 40) {
+        for (let i of liArr) {
+            i.setAttribute("class", "");
+        }
+        num++;
+        liArr[num].setAttribute("class", "check");
+        if (num + 1 === liArr.length) {
+            num = -1;
+        }
+        // console.log(num);
+    }
+}
 
 email.addEventListener("input", emailPrompt);
 emailSug.addEventListener("click", listenMouse);
+document.addEventListener("keydown", listenKey);
